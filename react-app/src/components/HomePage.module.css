@@ -1,0 +1,96 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3vw;
+}
+
+.inputbox{
+    padding: 1.5vh;
+    margin: 1vh;
+    text-align: center;
+    font-size: 4vw;
+    color: blue;
+    font-weight: bold;
+    border-radius: 1vw;
+}
+
+.buttongenerate{
+    padding: 1.5vh;
+    margin: 1vh;
+    background-color: pink;
+    border-radius: 1vw;
+}
+
+.report {
+    width: 90vh;
+
+}
+
+.outercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+}
+
+.outercontainerlast{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+}
+.innercontainer{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 5px;
+}
+
+.innercontainergraph{
+    width: 80vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 5px;
+}
+
+.graphscontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.label{
+    font-size: 2vh;
+    font-weight: bold;
+    padding: 1vh;
+}
+
+.value{
+    font-size: 2vh;
+    font-weight: bold;
+    color: blue;
+    border-radius: 5px;
+    padding: 0.5vh;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cell{
+    border: 1px solid black;
+    text-align: center;
+}
