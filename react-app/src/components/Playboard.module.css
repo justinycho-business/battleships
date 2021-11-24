@@ -1,0 +1,37 @@
+.outmermostcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.label{
+    font-size: 5vh;
+    font-weight: bold;
+    padding: 1vh;
+}
+
+.button{
+    padding: 1.5vh;
+    margin: 1vh;
+    background-color: pink;
+    border-radius: 1vw;
+}
+
+.buttoncontainer{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.turn{
+    font-size: 3vw;
+}
+
+.playingboard{
+    width: 90vw;
+    display: flex;
+
+}

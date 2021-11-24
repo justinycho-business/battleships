@@ -3,15 +3,14 @@ import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, Area } from 'recharts';
 import { newGameThunk } from '../store/grid_store';
-import Cell from './Cell';
-import classes from './Grid.module.css'
+import AnonCell from './AnonCell';
+import classes from './AnonGrid.module.css'
 
-function Grid(props) {
-    const shipindexes = {} // {3: 1, 56: 4}
+function AnonGrid(props) {
+    const shipindexes = {}
     const allCells = {}
 
     const colors = {"noinfo": "white", "sea": "aqua", "boat": "red"}
-    const gameStats = props.gameStats
 
     for (let i = 0; i < props.ships.length; i++) {
         const block = props.ships[i]
@@ -29,25 +28,25 @@ function Grid(props) {
 
     }
 
-    // const clickedOnGrid = (index) => {
-    //     if (allCells[index] !== 0) {
-    //     }
-    //     return
-    // }
+
 
 
     const arrayOfShipIndexes = Object.keys(shipindexes)
 
 
+
     const gridJSX = (Object.entries(allCells).map(([key, value]) => {
         return (
-        <Cell
+        <AnonCell
         key={key}
         index={key}
         value={value}
         color={colors}
         shipindexes = {shipindexes}
         allCells = {allCells}
+        addToPlayerShots={props.addToPlayerShots}
+        player1Shots={props.player1Shots}
+        showingplayer1={props.showingplayer1}
         />)
     }))
 
@@ -64,4 +63,4 @@ function Grid(props) {
     )
 }
 
-export default Grid
+export default AnonGrid

@@ -3,15 +3,14 @@ import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, Area } from 'recharts';
 import { newGameThunk } from '../store/grid_store';
-import Cell from './Cell';
-import classes from './Grid.module.css'
+import Cell2 from './Cell2';
+import classes from './Grid2.module.css'
 
-function Grid(props) {
+function Grid2(props) {
     const shipindexes = {} // {3: 1, 56: 4}
     const allCells = {}
 
     const colors = {"noinfo": "white", "sea": "aqua", "boat": "red"}
-    const gameStats = props.gameStats
 
     for (let i = 0; i < props.ships.length; i++) {
         const block = props.ships[i]
@@ -41,7 +40,7 @@ function Grid(props) {
 
     const gridJSX = (Object.entries(allCells).map(([key, value]) => {
         return (
-        <Cell
+        <Cell2
         key={key}
         index={key}
         value={value}
@@ -64,4 +63,4 @@ function Grid(props) {
     )
 }
 
-export default Grid
+export default Grid2

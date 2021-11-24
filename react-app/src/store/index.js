@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
 import gridReducer from './grid_store';
-
+import GameContext from './GameContext';
 const rootReducer = combineReducers({
   session,
   grid: gridReducer

@@ -1,0 +1,24 @@
+.hit{
+    width: 4.8vw;
+    height: 5vh;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+.sea{
+    width: 4.8vw;
+    height: 5vh;
+    background-color:aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+.cell {
+    width: 4.8vw;
+    height: 5vh;
+    border: 1px solid black
+}

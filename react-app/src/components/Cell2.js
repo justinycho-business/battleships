@@ -3,10 +3,10 @@ import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, Area } from 'recharts';
 import { newGameThunk } from '../store/grid_store';
-import classes from './Cell.module.css'
+import classes from './Cell2.module.css'
 import GameContext from '../store/GameContext';
 
-function Cell(props) {
+function Cell2(props) {
     const ctx = useContext(GameContext)
     const [color, setColor] = useState(props.color["info"])
 
@@ -19,7 +19,8 @@ function Cell(props) {
     //     "winner": "n/a"
     //                     }
 
-    if (ctx.player2Shots.includes(props.index)) {
+
+    if (ctx.player1Shots.includes(props.index)) {
         return (
             <div
         className={classes.cell}>
@@ -76,4 +77,4 @@ function Cell(props) {
 
 
 
-export default Cell
+export default Cell2

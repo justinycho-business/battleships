@@ -8,12 +8,13 @@ import classes from './HomePage.module.css';
 
 function HomePage() {
     const dispatch = useDispatch()
+    const history = useHistory()
     const user = useSelector(state => state?.session?.user);
     const grid = useSelector(state => state?.grid?.ship_placements);
     const grid_player_1 = useSelector(state => state?.grid?.ship_placements?.array_of_arrays_ship_indexs_player_1);
     const grid_player_2 = useSelector(state => state?.grid?.ship_placements?.array_of_arrays_ship_indexs_player_2);
 
-    const [newGameSwitch, setNewGameSwitch] = useState(0)
+    const [newGameSwitch, setNewGameSwitch] = useState(false)
 
     const [player, setPlayer] = useState(1)
     const [previousPlayer, setPreviousPlayer] = useState(2)
@@ -29,59 +30,6 @@ function HomePage() {
                         }
 
 
-    //if new game was created, populate the grid states with ships
-    // useEffect(() => {
-    //     if (Object.keys(player1grid).length === 0 &&
-    //     Object.keys(player2grid).length === 0
-    //          &&
-    //         grid_player_1 && grid_player_1.length === 4 &&
-    //         grid_player_2 && grid_player_2.length === 4) {
-    //             for (let i = 0; i < grid_player_1.length; i++) {
-    //                 const block =  grid_player_1[i]
-    //                 for (let j = 0; j < block.length; j++) {
-    //                     player1grid[block[j]] = i+1
-    //                 }
-    //             }
-
-    //             for (let i = 0; i < grid_player_2.length; i++) {
-    //                 const block =  grid_player_2[i]
-    //                 for (let j = 0; j < block.length; j++) {
-    //                     player2grid[block[j]] = i+1
-    //                 }
-
-    //             }
-    //             console.log(player1grid);
-    //             console.log(player2grid);
-
-    //         }
-    // }, [
-    //     newGameSwitch
-    // ])
-    // if (Object.keys(player1grid).length === 0 &&
-    // Object.keys(player2grid).length === 0
-    //      &&
-    //     grid_player_1 && grid_player_1.length === 4 &&
-    //     grid_player_2 && grid_player_2.length === 4) {
-    //         for (let i = 0; i < grid_player_1.length; i++) {
-    //             const block =  grid_player_1[i]
-    //             for (let j = 0; j < block.length; j++) {
-    //                 player1grid[block[j]] = i+1
-    //             }
-    //         }
-
-    //         for (let i = 0; i < grid_player_2.length; i++) {
-    //             const block =  grid_player_2[i]
-    //             for (let j = 0; j < block.length; j++) {
-    //                 player2grid[block[j]] = i+1
-    //             }
-
-    //         }
-    //         console.log(player1grid);
-    //         console.log(player2grid);
-
-    //     }
-
-
     const switchPlayer = () => {
         const current = player
         if (current === 1) {
@@ -94,8 +42,6 @@ function HomePage() {
     const startNewGame = () => {
         const req = dispatch(newGameThunk())
         setPlayer(1)
-        // player1grid = {}
-        // player2grid = {}
         gameStats = {
             "player1Shots": [],
             "player2Shots": [],
@@ -104,37 +50,54 @@ function HomePage() {
             "winner": "n/a"
                             }
         const currentgame = newGameSwitch
-        setNewGameSwitch(currentgame+1)
+        history.push('/playboard')
+
+
 
     }
 
     return (
         <>
             <div className={classes.header}>
-                <div>BattleShip HomePage</div>
-                <button onClick={startNewGame}>Start New Game</button>
+                <div className={classes.label}>Lobby</div>
+                <button
+                className={classes.newgame}
+                onClick={startNewGame}
+                >Start New Game</button>
 
+            {/* <>
+                <div>
                 {player === 1 && <div>Player 1 Turn</div>}
                 {player === 2 && <div>Player 2 Turn</div>}
 
-                <div>Player 1 Ships</div>
-                    {grid_player_1 &&
-                    grid_player_1.length > 0 &&
-                    <Grid
-                    ships={grid_player_1}
-                    gameStats = {gameStats}
-                    />}
+
+                </div>
+                <button>Switch Player</button>
+                <div className={classes.playingboard}>
+                    <div className={classes.outercontainer}>
+                        <div>Player 1 Ships</div>
+                            {grid_player_1 &&
+                            grid_player_1.length > 0 &&
+                            <Grid
+                            ships={grid_player_1}
+                            gameStats = {gameStats}
+                            player= {player}
+                            />}
+                    </div>
 
 
-
-                <div>Player 2 Ships</div>
-                {grid_player_2 &&
-                    grid_player_2.length > 0 &&
-                    <Grid
-                    ships={grid_player_2}
-                    gameStats = {gameStats}
-                    />}
-
+                    <div className={classes.outercontainerlast}>
+                        <div>Player 2 Ships</div>
+                        {grid_player_2 &&
+                            grid_player_2.length > 0 &&
+                            <Grid
+                            ships={grid_player_2}
+                            gameStats = {gameStats}
+                            player= {player}
+                            />}
+                        </div>
+                </div>
+            </> */}
 
 
 

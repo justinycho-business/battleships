@@ -1,0 +1,34 @@
+.playingboard{
+    width: 90vw;
+    display: flex;
+
+}
+.label{
+    font-size: 3vh;
+    font-weight: bold;
+    padding: 1vh;
+}
+.outercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2vw;
+    border: .5px gray solid;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 2vw;
+
+}
+
+.outercontainerlast{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2vw;
+    border: .5px gray solid;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 2vw;
+    margin-left: 2vw;
+
+}
